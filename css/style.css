@@ -19,17 +19,49 @@ h1 {
   font-size: 32px;
 }
 
-/* a:hover {
-  color: white;
-  text-decoration: none;
-} */
+#button {
+  display: inline-block;
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #002e39;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
 
 header {
   background: black;
   width: 100%;
   color: white;
+  position: fixed;
+  top: 0px;
 }
-
 
 .contenedormenu {
   display: flex;
@@ -86,6 +118,8 @@ p {
 
 section {
   background: #002e39;
+  width: 100%;
+  padding-top: 40px;
 }
 
 /*Class*/
@@ -95,10 +129,10 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   margin: auto;
-  width: 80%;
+  width: 90%;
   color: white;
+  padding-top: 20px;
 }
 
 .contenedorsection {
@@ -170,6 +204,14 @@ p {
   border: none;
   margin: 0;
   padding: 0;
+  transition: 0.8s;
+}
+
+.social__content a img:hover {
+  width: 50px;
+  height: auto;
+  transition: 0.8s;
+  transform: translateY(-5px);
 }
 
 /* PORTAFOLIO */
@@ -225,9 +267,6 @@ section {
   text-align: left;
 }
 
-/* .progress__info h3{
-  margin-right: 32px;
-} */
 
 /* STYLE PROGRESS */
 
@@ -282,7 +321,7 @@ progress::-moz-progress-bar {
   margin: 0px auto 40px auto;
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
 }
 
 .contactme {
@@ -290,6 +329,10 @@ progress::-moz-progress-bar {
   flex-direction: column;
   justify-content: center;
   width: 60%;
+}
+
+.contactme h2 {
+  margin-top: 70px;
 }
 
 .content__contact {
@@ -363,16 +406,20 @@ progress::-moz-progress-bar {
   line-height: normal;
   letter-spacing: normal;
   color: #ffffff;
-  margin: 30px 0px 0px 0px ;
+  margin: 30px 0px 0px 0px;
   border-radius: 5px;
+  outline: none;
 }
 
 .contact_address {
   margin: 34px 0px 0px 0px;
   padding-left: 20px;
-  width: 25%;
+  width: 26%;
   border-left: 1px solid white;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact_address p {
@@ -391,7 +438,7 @@ footer {
   align-items: center;
 }
 
-footer p{
+footer p {
   font-size: 11px;
   padding: 0px 20px 0px 20px;
 }
